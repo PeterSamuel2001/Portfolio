@@ -245,7 +245,33 @@ header nav ul li a:hover {
     align-items: center;
 }
 
-.about h3 { 
-margin-top: 11vh;
+.about img {
+    width: 20vw;
+    background-color: #A9D2AD;
+    border-radius: 135px;
 }
 
+
+@media (max-width: 800px) {
+.even-columns {
+display: grid;
+grid-template-columns: 100%;
+}
+
+.about {
+height: auto;
+}
+
+.about {
+    text-align: center;
+    align-self: center;
+}
+
+.about img {
+    width: 26vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+}
