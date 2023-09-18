@@ -1,4 +1,4 @@
-// back to top and header links transitions
+// back to top
 
 document.addEventListener('DOMContentLoaded', function () {
     var headerLink = document.getElementById("backToTop");
@@ -27,6 +27,10 @@ span.onclick = function () {
         behavior: "smooth",
     });
 };
+
+//
+
+// header links transitions
 
 document.addEventListener('DOMContentLoaded', function () {
     var headerLink = document.getElementById("section2");
@@ -74,3 +78,43 @@ document.addEventListener('DOMContentLoaded', function () {
 //
 
 
+// active navigation link, section, page or whatever.
+
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+    const scrolledY = window.scrollY;
+
+    navLinks.forEach(link => {
+        const sectionId = link.getAttribute('href').substring(1);
+        const section = document.getElementById(sectionId);
+
+        const sectionTop = section.offsetTop - 220;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrolledY >= sectionTop && scrolledY < sectionTop + sectionHeight) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+
+//
+
+// checkbtn and closebtn for mobile burger menu toggle (it makes checkbtn dissapear while closebtn appear and vice versa)
+
+document.getElementById('check').addEventListener('change', function() {
+    var checkBtn = document.querySelector('.checkbtn');
+    var closeBtn = document.querySelector('.closebtn');
+
+    if (this.checked) {
+        checkBtn.style.display = 'none';
+        closeBtn.style.display = 'block';
+    } else {
+        checkBtn.style.display = 'block';
+        closeBtn.style.display = 'none';
+    }
+});
+
+//
