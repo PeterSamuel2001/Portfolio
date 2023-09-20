@@ -39,8 +39,7 @@ body {
 
 /* Set core body defaults */
 body {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Exo 2', sans-serif;
     text-rendering: optimizeSpeed;
     line-height: 1.45;
 
@@ -80,9 +79,15 @@ svg {
 /* root vars */
 
 :root {
-    --header-and-btt: rgba(104, 173, 119, 0.416);
-    --primary-font-clr: rgb(5, 109, 5);
-    --secondary-font-clr: #023a28;
+    --header-and-btt: hsla(264, 15%, 87%, 0.506);
+    --btt-hover: #dedae46d;
+    --active-darkmode: rgb(32, 103, 255);
+    --lightmode-active: #FF00F7;
+    --back-to-top-lightmode-hover: #c505ff;
+    --header-mobile: #d7d5d5a8;
+    --header-mobile-dark: #333745e8;
+    --primary-font-clr: #421C86;
+    --secondary-font-clr: #421C86;
 }
 
 /* utility classes */
@@ -113,14 +118,152 @@ svg {
 
 /* content */
 
-
-
 body {
-    background-color: #d8edd5;
+    background-color: rgba(253, 247, 253, 0.679);
+    transition: 0.3s;
+}
+
+/* CSS */
+
+@media (min-width: 801px) {
+
+    .even-columns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6vw;
+    }
+
+
+
+    .mobile-text {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: none;
+    }
+
+    .desktop-dark-mode {
+        background-color: #191f2f;
+    }
+
+
+    .desktop-dark-mode h1,
+    .desktop-dark-mode h2,
+    .desktop-dark-mode h3,
+    .desktop-dark-mode h4,
+    .desktop-dark-mode a,
+    .desktop-dark-mode p,
+    .desktop-dark-mode .support a {
+        color: #DCE2F0;
+    }
+
+    .desktop-dark-mode nav ul,
+    .desktop-dark-mode .back-to-top {
+        background-color: rgba(36, 135, 164, 0.21);
+    }
+
+    .desktop-dark-mode .desktop-toggle svg {
+        color: rgb(231, 231, 231);
+    }
+
+    .desktop-dark-mode .desktop-toggle svg:hover {
+        color: #DCE2F0;
+    }
+
+
+    .desktop-toggle {
+        position: fixed;
+        top: 3.5vh;
+        right: 3vw;
+        background: none;
+        border: none;
+        width: 45px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .desktop-toggle:hover {
+        transform: scale(1.1);
+    }
+
+    .desktop-toggle svg {
+        color: var(--primary-font-clr);
+        transition: 0.3s;
+    }
+
+    .desktop-toggle svg:hover {
+        color: var(--back-to-top-lightmode-hover);
+    }
+
+    .desktop-dark-mode a.active {
+        color: var(--active-darkmode);
+    }
+
+    .desktop-dark-mode .back-to-top:hover {
+        color: var(--active-darkmode);
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .desktop-dark-mode nav ul li a:hover {
+        color: var(--active-darkmode);
+        padding: 0px 10px;
+    }
+
+    /* */
+
+    .burger-menu {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 3vh;
+        backdrop-filter: blur(5px);
+    }
+
+    header nav ul {
+        display: flex;
+        gap: 4.5vw;
+        background-color: var(--header-and-btt);
+        padding: 0.4rem 1rem;
+        border-radius: 15px;
+    }
+
+    .back-to-top {
+        position: fixed;
+        color: var(--primary-font-clr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: -100px;
+        right: 30px;
+        font-size: 1.6rem;
+        border-radius: 15px;
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--header-and-btt);
+        transition: 0.5s;
+        backdrop-filter: blur(5px);
+    }
+
+    .back-to-top:hover {
+        color: var(--back-to-top-lightmode-hover);
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .back-to-top.show {
+        bottom: 30px;
+    }
 }
 
 section {
     height: 100vh;
+    padding: 0% 7%;
 }
 
 a {
@@ -145,40 +288,18 @@ h3 {
     font-weight: 500;
 }
 
+h4 {
+    color: var(--primary-font-clr);
+}
+
 p {
     color: var(--primary-font-clr);
     font-size: 1.25em;
     font-weight: 400;
 }
 
-.container {
-    padding: 0% 7%;
-}
-
-.even-columns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6vw;
-}
-
 .invisible {
     display: none;
-}
-
-header {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 3vh;
-    backdrop-filter: blur(5px);
-}
-
-header nav ul {
-    display: flex;
-    gap: 4.5vw;
-    background-color: var(--header-and-btt);
-    padding: 0.4rem 1rem;
-    border-radius: 15px;
 }
 
 header nav ul li {
@@ -198,16 +319,15 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: rgb(3, 146, 39);
-    background-color: rgba(122, 202, 135, 0.229);
+    color: rgb(255, 0, 247);
     padding: 0px 10px;
 }
 
 nav a.active {
-    color: rgba(94, 255, 0, 0.982);
+    color: var(--lightmode-active);
 }
 
-.check {
+.checkbox-menu {
     display: none;
 }
 
@@ -219,41 +339,24 @@ nav a.active {
     display: none;
 }
 
-
-.back-to-top {
-    position: fixed;
-    color: var(--font-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    bottom: -100px;
-    right: 30px;
-    font-size: 1.6rem;
-    border-radius: 15px;
-    width: 4rem;
-    height: 4rem;
-    background-color: var(--header-and-btt);
-    transition: 0.5s;
-    backdrop-filter: blur(5px);
-}
-
-.back-to-top:hover {
-    color: rgb(3, 146, 39);
-    background-color: rgba(122, 202, 135, 0.515);
-    width: 4.5rem;
-    height: 4.5rem;
-}
-
-.back-to-top.show {
-    bottom: 30px;
-}
-
 .home {
+
     display: grid;
     align-items: center;
     text-align: center;
 
 }
+
+.home .left {
+    margin-top: 5vh;
+}
+
+.home img {
+    width: 26vw;
+    margin: 0 auto;
+}
+
+
 
 .about {
     display: flex;
@@ -263,7 +366,6 @@ nav a.active {
 
 .about img {
     width: 20vw;
-    background-color: #A9D2AD;
     border-radius: 135px;
 }
 
@@ -281,6 +383,34 @@ nav a.active {
         height: auto;
     }
 
+    header {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 80vw;
+        text-align: center;
+        background-color: var(--header-mobile);
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.75rem 1rem;
+        border-radius: 15px;
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+nav ul li {
+    margin: 4vh 0vw;
+}
+
     .about {
         text-align: center;
         align-self: center;
@@ -291,48 +421,82 @@ nav a.active {
         margin: 0 auto;
     }
 
-    .check {
-        display: none;
+    .burger-menu {
+        display: block;
     }
 
     .checkbtn {
+        color: var(--primary-font-clr);
         display: block;
         position: fixed;
-        top: 3vh;
-        left: 38vw;
+        top: 5vh;
+        left: 40vw;
         cursor: pointer;
-        background-color: #d6f0d2db;
+        background-color: rgba(253, 247, 253, 0.043);
+        backdrop-filter: blur(1px);
     }
 
     .closebtn {
+        color: var(--primary-font-clr);
         position: fixed;
-        top: 3vh;
-        left: 38vw;
+        top: 5vh;
+        left: 40vw;
         cursor: pointer;
-        background-color: #d6f0d2db;
+        background-color: rgba(253, 247, 253, 0.043);
+        backdrop-filter: blur(1px);
     }
 
-    header nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 7vh;
-        position: fixed;
-        width: 80vw;
-        height: auto;
-        top: 15vh;
-        right: -200vw;
-        text-align: center;
-        box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.296);
-        border-radius: 5px;
-        transition: 0.3s;
-        background-color: rgba(104, 173, 119, 0.975);
+    .desktop-toggle {
+        display: none;
     }
 
-    #check:checked~ul {
-        right: -40vw;
+    .mobile-text {
+        display: block;
+        transform: translateX(43%);
     }
 
-    nav ul li {
-        padding: 4vh 0vw;
+    .mobile-text svg {
+        color: var(--primary-font-clr);
     }
+
+    .mobile-toggle {
+        display: none;
+    }
+
+    .mobile-dark-mode {
+        background-color: #1d1f26;
+    }
+
+    .mobile-dark-mode h1,
+    .mobile-dark-mode h2,
+    .mobile-dark-mode h3,
+    .mobile-dark-mode h4,
+    .mobile-dark-mode a,
+    .mobile-dark-mode p,
+    .mobile-dark-mode .support a,
+    .mobile-dark-mode a {
+        color: #fff;
+    }
+
+    .mobile-dark-mode nav ul {
+        background-color: var(--header-mobile-dark);
+    }
+
+    .mobile-dark-mode a:hover {
+        color: var(--active-darkmode);
+    }
+
+    .mobile-dark-mode .mobile-text svg {
+        color: white;
+    }
+
+    .mobile-dark-mode .checkbtn,
+    .mobile-dark-mode .closebtn {
+        color: white;
+    }
+
+    .mobile-dark-mode a.active {
+        color: var(--active-darkmode);
+    }
+
 }

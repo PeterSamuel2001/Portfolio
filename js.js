@@ -104,7 +104,7 @@ window.addEventListener('scroll', () => {
 
 // checkbtn and closebtn for mobile burger menu toggle (it makes checkbtn dissapear while closebtn appear and vice versa)
 
-document.getElementById('check').addEventListener('change', function() {
+document.getElementById('check').addEventListener('change', function () {
     var checkBtn = document.querySelector('.checkbtn');
     var closeBtn = document.querySelector('.closebtn');
 
@@ -118,3 +118,68 @@ document.getElementById('check').addEventListener('change', function() {
 });
 
 //
+
+/* this is so when you toggle the burger menu the appears and fades out when
+you toggle it once again */
+
+var menu = document.querySelector("nav ul");
+
+function toggleMenu() {
+    menu.style.opacity = this.checked ? '1' : '0';
+    menu.style.pointerEvents = this.checked ? 'auto' : 'none';
+}
+
+document.getElementById('check').addEventListener('change', toggleMenu);
+
+//
+
+
+// JavaScript
+
+const mobileToggle = document.getElementById('mobile-toggle');
+
+// Function to apply the mobile theme
+function applyMobileTheme() {
+    if (mobileToggle.checked) {
+        // Apply mobile dark mode styles
+        document.body.classList.add('mobile-dark-mode');
+        // Save the setting to localStorage
+        localStorage.setItem('mobileThemeEnabled', 'true');
+    } else {
+        // Remove mobile dark mode styles
+        document.body.classList.remove('mobile-dark-mode');
+        // Save the setting to localStorage
+        localStorage.setItem('mobileThemeEnabled', 'false');
+    }
+}
+
+// Function to toggle desktop theme
+function toggleDesktopTheme() {
+    const body = document.body;
+    body.classList.toggle('desktop-dark-mode');
+    // Save the setting to localStorage
+    const currentTheme = body.classList.contains('desktop-dark-mode');
+    localStorage.setItem('desktopThemeEnabled', currentTheme.toString());
+}
+
+// Event listener for the mobile toggle
+mobileToggle.addEventListener('change', applyMobileTheme);
+
+// Retrieve the previous settings from localStorage and apply them
+const previousMobileTheme = localStorage.getItem('mobileThemeEnabled');
+const previousDesktopTheme = localStorage.getItem('desktopThemeEnabled');
+
+if (previousMobileTheme === 'true') {
+    mobileToggle.checked = true;
+    applyMobileTheme();
+}
+
+if (previousDesktopTheme === 'true') {
+    toggleDesktopTheme();
+}
+
+
+
+// 
+
+// JavaScript code
