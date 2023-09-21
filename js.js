@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // prevent the default behavior of jumping to the section
 
         var section = document.querySelector(event.target.getAttribute('href'));
-        var scrollOffset = 0; // adjust this value according to your needs
+        var scrollOffset = 40; // adjust this value according to your needs
 
         window.scrollTo({
             top: section.offsetTop - scrollOffset,
@@ -60,13 +60,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+//
+
+
+// active navigation link, section, page or whatever.
 document.addEventListener('DOMContentLoaded', function () {
     var headerLink = document.getElementById("section4");
     headerLink.addEventListener('click', function (event) {
         event.preventDefault(); // prevent the default behavior of jumping to the section
 
         var section = document.querySelector(event.target.getAttribute('href'));
-        var scrollOffset = 100; // adjust this value according to your needs
+        var scrollOffset = 60; // adjust this value according to your needs
 
         window.scrollTo({
             top: section.offsetTop - scrollOffset,
@@ -74,12 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-//
-
-
-// active navigation link, section, page or whatever.
-
 const navLinks = document.querySelectorAll('nav a');
 
 window.addEventListener('scroll', () => {

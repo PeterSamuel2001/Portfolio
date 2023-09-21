@@ -136,13 +136,6 @@ svg {
 
 /* content */
 
-body {
-    background-color: rgba(253, 247, 253, 0.679);
-    transition: 0.3s;
-}
-
-/* CSS */
-
 @media (min-width: 801px) {
 
     /* .even-columns {
@@ -243,6 +236,13 @@ body {
         color: rgba(255, 255, 255, 0.993)e7;
     }
 
+    .desktop-dark-mode .portfolio div a img {
+        box-shadow: .1rem 0.25rem 5em rgba(255, 255, 255, 0.079);
+    }
+
+    .desktop-dark-mode .portfolio div a img {
+        border-color: var(--active-darkmode);
+    }
     /* */
 
     .burger-menu {
@@ -295,6 +295,12 @@ body {
     .back-to-top.show {
         bottom: 30px;
     }
+}
+
+body {
+    background-color: rgba(253, 247, 253, 0.679);
+    transition: 0.3s;
+
 }
 
 section {
@@ -400,7 +406,7 @@ nav a.active {
 }
 
 .about img {
-width: 25vw;
+    width: 25vw;
 }
 
 .about .facts ul li {
@@ -419,14 +425,36 @@ width: 25vw;
 }
 
 .portfolio {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
     align-items: center;
     justify-content: center;
-gap: 0.5vw;
 }
 
-.portfolio .shadow {
-    box-shadow: 1px 1px 1px black;
+.portfolio div {
+    margin: 5% 1%;
+
+}
+
+.portfolio div a {
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio div a img {
+    box-shadow: .1rem 0.25rem 1em rgba(0, 0, 0, 0.082);
+    width: 80%;
+    border: solid;
+    border-color: var(--back-to-top-lightmode-hover);
+    border-radius: 5px;
+}
+
+.contact {
+    height: 63vh;
+}
+
+.contact a i {
+    color: #0A66C2;
 }
 
 .footer {
@@ -477,6 +505,22 @@ gap: 0.5vw;
         height: auto;
     }
 
+    .about {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-self: center;
+    }
+
+    .about img {
+        width: 26vw;
+        margin: 0 auto;
+    }
+
+    .portfolio div a img {
+        width: 100%;
+    }
+
     .footer {
         display: flex;
         flex-direction: column;
@@ -510,18 +554,6 @@ gap: 0.5vw;
 
     nav ul li {
         margin: 4vh 0vw;
-    }
-
-    .about {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-self: center;
-    }
-
-    .about img {
-        width: 26vw;
-        margin: 0 auto;
     }
 
     .burger-menu {
@@ -615,4 +647,8 @@ gap: 0.5vw;
         color: rgba(255, 255, 255, 0.993)e7;
     }
 
+    .mobile-dark-mode .portfolio div a img {
+        border-color: var(--active-darkmode);
+        box-shadow: .1rem 0.25rem 5em rgba(255, 255, 255, 0.079);
+    }
 }
