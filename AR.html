@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js.js"></script>
+    <title>بيتر صموئيل</title>
+
+
+</head>
+
+<body>
+    <a href="#invisible" id="backToTop" class="back-to-top">
+        <i class="fa-solid fa-angle-up fa-2xl"></i></a>
+    <section class="invisible" id="invisible">invisible</section>
+    <header id="header">
+
+        <nav>
+            <div class="burger-menu">
+                <input type="checkbox" class="checkbox-menu" id="check" />
+                <label for="check" class="checkbtn">
+                    <i class="fa-solid fa-bars fa-2xl"></i>
+                </label>
+                <label for="check" class="closebtn" style="display: none;">
+                    <i class="fa-solid fa-times fa-2xl"></i>
+                </label>
+            </div>
+            <ul>
+                <li><a href="#secs2" id="section2">عني</a></li>
+                <li><a href="#secs3" id="section3">مشاريعي</a></li>
+                <li><a href="#secs4" id="section4">تواصل</a></li>
+                <label class="mobile-text" for="mobile-toggle">
+                    <svg width="15%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+                        <path fill="currentColor"
+                            d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"
+                            transform="translate(-8 -8)" />
+                    </svg>
+                </label>
+                <input type="checkbox" class="mobile-toggle" id="mobile-toggle">
+            </ul>
+        </nav>
+        <button class="desktop-toggle" id="desktop-toggle" onclick="toggleDesktopTheme()"> <svg width="100%"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+                <path fill="currentColor"
+                    d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"
+                    transform="translate(-6 -8)" />
+            </svg></button>
+    </header>
+    <section class="home">
+        <div class="left">
+            <h1>مرحبا</h1>
+            <h2>انا بيتر</h2>
+            <h3 class="padding-block-10">شغفي هو بناء مواقع الويب</h3>
+        </div>
+    </section>
+
+    <section id="secs2" class="about">
+        <div>
+            <img src="images/avatar.png" alt="">
+        </div>
+        <div>
+            <h2>من انا؟</h2>
+            <h3>انا مطور ويب مصري</h3>
+            <h4 class="padding-block-10">لدي شغف كبير لمجال تطوير الويب واحب دائما ان اطور من حرفتي
+            </h4>
+            <div class="facts padding-block-20">
+                <ul>
+                    <li>
+                        <p>انا محب للبرمجيات والحواسيب عموما ولطالما كنت مهتما بمجال التكنولوجيا</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="about2">
+        <h3>
+        مهاراتي : <span>HTML, CSS, JS</span>
+        </h3>
+    </section>
+
+    <section id="secs3" class="about">
+        <div class="even-columns">
+            <div>
+                <img src="images/avatar.png" alt="">
+            </div>
+            <div>
+                <h3>انا مطور ويب مصري</h3>
+                <h4 class="padding-block-10">لدي شغف كبير لمجال تطوير الويب واحب دائما ان اطور من حرفتي
+                </h4>
+            </div>
+        </div>
+        <div class="padding-block-100">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores vero
+                voluptatem veniam est reiciendis quam nobis explicabo, obcaecati mollitia illum magni suscipit quos.
+                Amet explicabo impedit saepe minima excepturi culpa!
+            </p>
+        </div>
+    </section>
+
+    <section id="secs4" class="about">
+        <div class="even-columns">
+            <div>
+                <img src="images/avatar.png" alt="">
+            </div>
+            <div>
+                <h3>انا مطور ويب مصري</h3>
+                <h4 class="padding-block-10">لدي شغف كبير لمجال تطوير الويب واحب دائما ان اطور من حرفتي
+                </h4>
+            </div>
+        </div>
+        <div class="padding-block-100">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores vero
+                voluptatem veniam est reiciendis quam nobis explicabo, obcaecati mollitia illum magni suscipit quos.
+                Amet explicabo impedit saepe minima excepturi culpa!
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <img src="images/avatar.png" alt="">
+        </div>
+        <div class="copyright">
+            <h4>حقوق النشر</h4>
+            <p><span class="en-span">Peter Samuel</span> 2023 © جميع الحقوق محفوظة</p>
+        </div>
+        <div class="language">
+            <a href="EN.html">English</a>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://kit.fontawesome.com/0f471979b7.js" crossorigin="anonymous"></script
+</body>
+
+</html>
