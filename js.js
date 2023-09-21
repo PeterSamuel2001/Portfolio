@@ -123,12 +123,23 @@ you toggle it once again */
 var menu = document.querySelector("nav ul");
 
 function toggleMenu() {
-    menu.style.opacity = this.checked ? '1' : '0';
-    menu.style.pointerEvents = this.checked ? 'auto' : 'none';
+    if (this.checked) {
+        menu.style.display = 'block';
+        setTimeout(function () {
+            menu.style.opacity = '1'; // Fade in the menu
+        }, 10);
+    } else {
+        menu.style.opacity = '0'; // Fade out the menu
+        setTimeout(function () {
+            menu.style.display = 'none';
+        }, 500); // Wait for the fade-out animation to finish
+    }
 }
 
-document.getElementById('check').addEventListener('change', toggleMenu);
+// Set the initial display state when the page loads
+menu.style.display = 'none'; // or 'block' if you want it initially open
 
+document.getElementById('check').addEventListener('change', toggleMenu);
 //
 
 
@@ -178,6 +189,6 @@ if (previousDesktopTheme === 'true') {
 
 
 
-// 
+//
 
 // JavaScript code

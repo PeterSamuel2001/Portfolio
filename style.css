@@ -538,7 +538,8 @@ nav a.active {
     }
 
     nav ul {
-        display: flex;
+        
+        display: none;
         flex-direction: column;
         position: fixed;
         width: 80vw;
@@ -552,8 +553,8 @@ nav a.active {
         padding: 0.75rem 1rem;
         border-radius: 15px;
         backdrop-filter: blur(8px);
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
+        opacity: 0; /* Initially set the opacity to 0 */
+        transition: opacity 0.5s ease; /* Add a transition effect for opacity */
     }
 
     nav ul li {
