@@ -52,7 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // prevent the default behavior of jumping to the section
 
         var section = document.querySelector(event.target.getAttribute('href'));
-        var scrollOffset = 40; // adjust this value according to your needs
+        var scrollOffset = 40; // default scroll offset value
+
+        if (window.innerWidth < 800) {
+            scrollOffset = 350; // adjust scroll offset value for screen width less than 800
+        }
 
         window.scrollTo({
             top: section.offsetTop - scrollOffset,
@@ -71,6 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var section = document.querySelector(event.target.getAttribute('href'));
         var scrollOffset = 60; // adjust this value according to your needs
+
+        if (window.innerWidth < 800) {
+            scrollOffset = 15; // adjust scroll offset value for screen width less than 800
+        }
 
         window.scrollTo({
             top: section.offsetTop - scrollOffset,
@@ -136,11 +144,15 @@ function toggleMenu() {
     }
 }
 
-// Set the initial display state when the page loads
-menu.style.display = 'none'; // or 'block' if you want it initially open
+// Set the initial display state based on viewport width
+if (window.innerWidth < 768) {
+    menu.style.display = 'none'; // Hide the menu on mobile
+} else {
+    menu.style.display = 'flex'; // Show the menu on desktop as flex
+    menu.style.flexDirection = 'row'; // Set the flex direction to row
+}
 
 document.getElementById('check').addEventListener('change', toggleMenu);
-//
 
 
 // JavaScript
