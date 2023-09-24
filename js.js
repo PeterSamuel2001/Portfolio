@@ -1,31 +1,17 @@
 // back to top
 
 document.addEventListener('DOMContentLoaded', function () {
-    var headerLink = document.getElementById("backToTop");
-    headerLink.addEventListener('click', function (event) {
-        event.preventDefault(); // prevent the default behavior of jumping to the section
-
-        var section = document.querySelector(event.target.getAttribute('href'));
-        var scrollOffset = 0; // adjust this value according to your needs
-
+    span.onclick = function () {
         window.scrollTo({
-            top: section.offsetTop - scrollOffset,
-            behavior: 'smooth' // adds smooth scrolling effect
+            top: 0,
+            behavior: "smooth",
         });
-    });
+    };  
 });
 
 let span = document.getElementById("backToTop");
-
 window.onscroll = function () {
     this.scrollY >= 500 ? span.classList.add("show") : span.classList.remove("show");
-};
-
-span.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
 };
 
 //

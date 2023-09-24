@@ -520,7 +520,7 @@ nav a.active {
     }
 
     .about img {
-        width: 26vw;
+        width: 10rem;
         margin: 0 auto;
     }
 
@@ -530,9 +530,9 @@ nav a.active {
         min-height: 120vh;
     }
 
-.portfolio .containers {
-    margin: -1vh 0vw;
-}
+    .portfolio .containers {
+        margin: -1vh 0vw;
+    }
 
     .portfolio div a img {
         width: 100%;
