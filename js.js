@@ -126,7 +126,7 @@ function toggleMenu() {
         menu.style.opacity = '0'; // Fade out the menu
         setTimeout(function () {
             menu.style.display = 'none';
-        }, 500); // Wait for the fade-out animation to finish
+        }, 250); // Wait for the fade-out animation to finish
     }
 }
 
