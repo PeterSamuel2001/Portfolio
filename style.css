@@ -110,7 +110,7 @@
     .desktop-toggle {
         position: fixed;
         top: 3.5vh;
-        right: 3vw;
+        right: 2vw;
         background: none;
         border: none;
         width: 45px;
@@ -199,11 +199,11 @@
         align-items: center;
         justify-content: center;
         bottom: -100px;
-        right: 30px;
+        right: 1.15vw;
         font-size: 1.6rem;
         border-radius: 15px;
-        width: 4rem;
-        height: 4rem;
+        width: 3.5rem;
+        height: 3.5rem;
         background-color: var(--header-and-btt);
         transition: 0.5s;
         backdrop-filter: blur(5px);
@@ -211,8 +211,8 @@
 
     .back-to-top:hover {
         color: var(--back-to-top-lightmode-hover);
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     .back-to-top.show {
@@ -355,12 +355,18 @@ nav a.active {
     min-height: 100vh;
     max-height: 200vh; */
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.portfolio div {
-    margin: 5% 0%;
+.portfolio .containers {
+    margin: 0vh 0vw;
+    display: flex;
+    align-items: center;
+}
 
+.portfolio .containers div {
+    margin: 0.5% 0.5%;
 }
 
 .portfolio div a {
@@ -370,7 +376,7 @@ nav a.active {
 
 .portfolio div a img {
     box-shadow: .1rem 0.25rem 1em rgba(0, 0, 0, 0.082);
-    width: 80%;
+    width: 100%;
     border: solid;
     border-color: var(--back-to-top-lightmode-hover);
     border-radius: 5px;
@@ -425,7 +431,7 @@ nav a.active {
     }
 
     section {
-        height: auto;
+        height: 100vh;
     }
 
     .back-to-top {
@@ -456,15 +462,23 @@ nav a.active {
     .portfolio {
         display: flex;
         flex-direction: column;
-        min-height: 50vh;
+        height: auto;
+        margin-top: 10vh;
         /* set the minimum height of the section */
-        max-height: 155vh;
+
         /* set the maximum height of the section */
 
     }
 
     .portfolio .containers {
-        margin: -1vh 0vw;
+        margin: 0vh 0vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio div {
+        margin: 0.5vh 0vw;
     }
 
     .portfolio div a img {
@@ -517,8 +531,8 @@ nav a.active {
         color: var(--primary-font-clr);
         display: block;
         position: fixed;
-        top: 5vh;
-        left: 40vw;
+        top: 3vh;
+        left: 39vw;
         cursor: pointer;
         background-color: rgba(253, 247, 253, 0.043);
         backdrop-filter: blur(1px);
@@ -527,8 +541,8 @@ nav a.active {
     .closebtn {
         color: var(--primary-font-clr);
         position: fixed;
-        top: 5vh;
-        left: 40vw;
+        top: 3vh;
+        left: 39.5vw;
         cursor: pointer;
         background-color: rgba(253, 247, 253, 0.043);
         backdrop-filter: blur(1px);

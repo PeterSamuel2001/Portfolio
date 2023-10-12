@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // prevent the default behavior of jumping to the section
 
         var section = document.querySelector(event.target.getAttribute('href'));
-        var scrollOffset = 40; // default scroll offset value
+        var scrollOffset = 80; // default scroll offset value
 
         if (window.innerWidth < 800) {
-            scrollOffset = 350; // adjust scroll offset value for screen width less than 800
+            scrollOffset = 35; // adjust scroll offset value for screen width less than 800
         }
 
         window.scrollTo({
