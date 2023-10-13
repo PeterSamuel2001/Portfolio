@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // prevent the default behavior of jumping to the section
 
         var section = document.querySelector(event.target.getAttribute('href'));
-        var scrollOffset = 45; // adjust this value according to your needs
+        var scrollOffset = 80; // adjust this value according to your needs
 
         window.scrollTo({
             top: section.offsetTop - scrollOffset,
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var scrollOffset = 80; // default scroll offset value
 
         if (window.innerWidth < 800) {
-            scrollOffset = 35; // adjust scroll offset value for screen width less than 800
+            scrollOffset = 80; // adjust scroll offset value for screen width less than 800
         }
 
         window.scrollTo({
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var scrollOffset = 60; // adjust this value according to your needs
 
         if (window.innerWidth < 800) {
-            scrollOffset = 15; // adjust scroll offset value for screen width less than 800
+            scrollOffset = 0; // adjust scroll offset value for screen width less than 800
         }
 
         window.scrollTo({
