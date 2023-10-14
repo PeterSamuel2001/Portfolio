@@ -218,6 +218,18 @@
     .back-to-top.show {
         bottom: 30px;
     }
+
+    .about {
+        display: grid;
+        justify-content: center;
+    }
+    
+    .about .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    
 }
 
 body {
@@ -227,8 +239,9 @@ body {
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     padding: 0% 5%;
+    margin: 2vh 0vw;
 }
 
 a {
@@ -304,28 +317,17 @@ nav a.active {
     display: none;
 }
 
-
-
 .home {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 .home img {
     width: 26vw;
     margin: 0 auto;
-}
-
-.about {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
 }
 
 .about img {
@@ -383,7 +385,7 @@ nav a.active {
 }
 
 .contact {
-    height: 65vh;
+    min-height: auto;
 }
 
 .contact a i {
@@ -392,7 +394,6 @@ nav a.active {
 
 .contact a img {
     width: 9rem;
-
 }
 
 .footer {
@@ -431,7 +432,7 @@ nav a.active {
     }
 
     section {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .back-to-top {
@@ -444,14 +445,9 @@ nav a.active {
     }
 
     .about {
-        height: auto;
-    }
-
-    .about {
         display: flex;
         flex-direction: column;
-        text-align: center;
-        align-self: center;
+        justify-content: center;
     }
 
     .about img {
@@ -464,14 +460,11 @@ nav a.active {
         flex-direction: column;
         height: auto;
         margin-top: 10vh;
-        /* set the minimum height of the section */
-
-        /* set the maximum height of the section */
 
     }
 
     .portfolio .containers {
-        margin: 0vh 0vw;
+        margin: 1vh 0vw;
         display: flex;
         flex-direction: column;
         align-items: center;
